@@ -1,0 +1,29 @@
+<article ng-repeat="job in data">
+	<h2>{{ job.judul }}</h2>
+	<small><a target-="_blank" href="{{ job.perusahaan_link }}/?utm_source=nganggur.userlabs.co.id&utm_medium=job_detail">@{{ job.perusahaan }}</a></small>
+	<p><strong>Diposting pada {{ job.waktu | amDateFormat:'dddd, Do MMMM YYYY' }}</strong></p>
+	<div class="divider"></div>
+	<h2>Briefing</h2>
+	<p>
+		You will be working on the latest technologies in the mobile application / web development space. Using these knowledge, you will help connects home owner with merchant for delivering mineral water and gas intergrated with GPS and real time notification.
+	</p>
+
+	<h2>Persyaratan</h2>
+	<ul>
+		<li>Superior knowledge of PHP Code Igniter, Mysql</li>
+		<li>Highly proficient in web backend and API development</li>
+		<li>Familiar with tools like Git, Slack / Trelo</li>
+		<li>Team Player, Self-Motivated, Willingness to Learn and Share</li>
+	</ul>
+
+	<h2>Deskripsi Pekerjaan</h2>
+	<ul>
+		<li>Create API for tukang.id app</li>
+		<li>maintaining and develop new feature for backend site</li>
+		<li>ensure stability and do bug fixes of the app</li>
+		<li>maintain and processing database (create query)</li>
+		<li>improve and maintaining security </li>
+	</ul>
+	<a class="button" href="{{ job.cta }}" target="_blank">Lamar Pekerjaan Ini</a>
+</article>
+<a href="#!/" class="button kembali">Kembali</a>

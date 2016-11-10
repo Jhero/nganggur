@@ -1,0 +1,29 @@
+<div ng-show="data.length">
+  <h3>Cari</h3>
+  <input type="text" class="u-full-width" ng-model="$ctrl.katakunci" placeholder="Ketik disini, misalnya: Java Programmer... Hapus pencarian bila tidak ada hasil" />
+</div>
+<br />
+<div class="content" ng-repeat="job in data | limitTo:limit | filter:$ctrl.katakunci">
+  <div ng-show="data.length">
+    <h2><a href="#!/pekerjaan/{{ job.permalink }}" class="job-title">{{ job.judul }}</a></h2>
+    <p>
+      {{ job.deskripsi | limitTo:300 }}...
+    </p>
+    <p>
+      Lowongan ini berlaku sampai: <strong id="deadline">{{ job.deadline | amDateFormat:'dddd, Do MMMM YYYY' }}</strong>
+    </p>
+    <p>Diposting oleh <strong><a target="_blank" href="{{ job.perusahaan_link }}/?utm_source=nganggur.userlabs.co.id&utm_medium=job_posting">{{ job.perusahaan }};</a></strong></p>
+    <a href="#!/pekerjaan/{{ job.permalink }}" class="button">Baca Selengkapnya</a>
+    <div class="divider"></div>
+  </div>
+</div>
+<div ng-hide="data.length">
+  <h2>Data tidak ditemukan, kembali ke <a href="#!/">beranda</a> dan coba cari lagi! </h2>
+  <p>Atau, ingin <a href="#!/posting">memposting lowongan pekerjaan baru?</a>
+  <a href="#!/" class="button kembali">Kembali</a>
+</div>
+<button ng-show="data.length" id="tombolLoadMore" class="button u-full-width" ng-click="loadMore()">Load lagi?</button>
+<div id="terakhir">
+  <h2>Sudah tidak ada data :(</h2>
+</div>
+
